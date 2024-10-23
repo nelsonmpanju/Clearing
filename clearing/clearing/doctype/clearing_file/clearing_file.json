@@ -1,0 +1,386 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CF-{YYYY}-{####}",
+ "creation": "2024-07-08 12:20:04.064087",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "details_tab",
+  "posting_date",
+  "column_break_hcemj",
+  "company",
+  "status",
+  "customer_details_section",
+  "customer",
+  "column_break_lunna",
+  "address_display",
+  "customer_address",
+  "clearing_company",
+  "shipment_details_section",
+  "shipper",
+  "shipment_type",
+  "mode_of_transport",
+  "bl_type",
+  "column_break_b8in0",
+  "carrier_name",
+  "airline",
+  "voyage_flight_number",
+  "airplane",
+  "departure_date",
+  "arrival_date",
+  "cargo_country_of_origin",
+  "cargo_details_section",
+  "cargo_details",
+  "section_break_xl9ew",
+  "cargo_description",
+  "column_break_nqelm",
+  "cargo_location",
+  "column_break_z7sfz",
+  "document_section_section",
+  "attach_documents",
+  "section_break_utsgq",
+  "document",
+  "additional_information_section",
+  "notes",
+  "column_break_abtcq",
+  "special_instructions",
+  "amended_from",
+  "dashboard_tab",
+  "stats",
+  "connections_tab",
+  "tancis_lodging_date",
+  "reference_no",
+  "tansad_no",
+  "column_break_wpwwj",
+  "declaration_type",
+  "cl_plan"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer_details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Consignee/ Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_address",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Consignee Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "shipment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Shipment Details"
+  },
+  {
+   "fieldname": "shipment_type",
+   "fieldtype": "Select",
+   "label": "Shipment Type",
+   "options": "Import\nExport",
+   "reqd": 1
+  },
+  {
+   "fieldname": "mode_of_transport",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Mode of Transport",
+   "options": "Mode of Transport",
+   "reqd": 1
+  },
+  {
+   "fieldname": "arrival_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Arrival Date (ETA)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "departure_date",
+   "fieldtype": "Date",
+   "label": "Departure Date"
+  },
+  {
+   "depends_on": "eval:(doc.mode_of_transport == 'Sea')",
+   "fieldname": "carrier_name",
+   "fieldtype": "Link",
+   "label": "Shipping line",
+   "options": "Shipping Line"
+  },
+  {
+   "depends_on": "eval:(doc.mode_of_transport == 'Sea')",
+   "fieldname": "voyage_flight_number",
+   "fieldtype": "Data",
+   "label": "Shipping Vessel Number "
+  },
+  {
+   "fieldname": "cargo_details_section",
+   "fieldtype": "Section Break",
+   "label": "Cargo Details"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "cargo_details",
+   "fieldtype": "Table",
+   "label": "Cargo Details",
+   "options": "Cargo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Open\nPre-Lodged\nOn Process\nCleared\nDelivered",
+   "read_only": 1
+  },
+  {
+   "fieldname": "additional_information_section",
+   "fieldtype": "Section Break",
+   "label": "Additional Information"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "special_instructions",
+   "fieldtype": "Text",
+   "label": "Special Instructions"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Clearing File",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_b8in0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_lunna",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_abtcq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "address_display",
+   "fieldtype": "Small Text",
+   "label": "Consignee Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_hcemj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:(doc.mode_of_transport == 'Air')",
+   "fieldname": "airline",
+   "fieldtype": "Link",
+   "label": "Airline",
+   "options": "Airline"
+  },
+  {
+   "depends_on": "eval:(doc.mode_of_transport == 'Air')",
+   "fieldname": "airplane",
+   "fieldtype": "Data",
+   "label": "Airplane Number",
+   "options": "Airplane"
+  },
+  {
+   "fieldname": "connections_tab",
+   "fieldtype": "Tab Break",
+   "label": "TANCIS Details"
+  },
+  {
+   "fieldname": "details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Details"
+  },
+  {
+   "fetch_from": "clearing_agent.clearing_company",
+   "fieldname": "clearing_company",
+   "fieldtype": "Data",
+   "label": "Clearing Company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "document_section_section",
+   "fieldtype": "Section Break",
+   "label": "Document Section"
+  },
+  {
+   "fieldname": "document",
+   "fieldtype": "Table",
+   "label": "Document",
+   "options": "Clearing File Document",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cargo_description",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Cargo Description Summary",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_xl9ew",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_nqelm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_z7sfz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bl_type",
+   "fieldtype": "Select",
+   "label": "B/L Status",
+   "options": "\nOriginal B/L\nSeaway Bill\nTelex B/L",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "stats",
+   "fieldtype": "Section Break",
+   "label": "Stats"
+  },
+  {
+   "fieldname": "attach_documents",
+   "fieldtype": "Button",
+   "label": "Attach Documents"
+  },
+  {
+   "fieldname": "section_break_utsgq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "shipper",
+   "fieldtype": "Link",
+   "label": "Shipper ",
+   "options": "Shipper"
+  },
+  {
+   "fieldname": "dashboard_tab",
+   "fieldtype": "Tab Break",
+   "label": "Dashboard"
+  },
+  {
+   "fieldname": "tancis_lodging_date",
+   "fieldtype": "Date",
+   "label": "TANCIS Lodging Date"
+  },
+  {
+   "fieldname": "reference_no",
+   "fieldtype": "Data",
+   "label": "Reference No"
+  },
+  {
+   "fieldname": "tansad_no",
+   "fieldtype": "Data",
+   "label": "TANSAD No"
+  },
+  {
+   "fieldname": "declaration_type",
+   "fieldtype": "Data",
+   "label": "Declaration Type"
+  },
+  {
+   "fieldname": "cl_plan",
+   "fieldtype": "Data",
+   "label": "CL Plan"
+  },
+  {
+   "fieldname": "column_break_wpwwj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cargo_location",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Cargo Location"
+  },
+  {
+   "fieldname": "cargo_country_of_origin",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Cargo Country of Origin",
+   "options": "Country",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-09-25 18:56:04.504988",
+ "modified_by": "Administrator",
+ "module": "Clearing",
+ "name": "Clearing File",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "customer,mode_of_transport,bl_type,shipper",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Orange",
+   "title": "Open"
+  },
+  {
+   "color": "Green",
+   "title": "Pre-Lodged"
+  }
+ ]
+}

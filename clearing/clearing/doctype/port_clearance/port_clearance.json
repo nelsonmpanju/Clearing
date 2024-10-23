@@ -1,0 +1,192 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:Port-{YY}-{####}",
+ "creation": "2024-07-17 15:23:46.971435",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "clearing_file",
+  "cf_delivery_note",
+  "column_break_dfl0o",
+  "consignee",
+  "status",
+  "consignee_address",
+  "staff_section",
+  "staff_id",
+  "column_break_kj4eh",
+  "staff_name",
+  "total_charges_section",
+  "total_charges",
+  "container_deposit_amount",
+  "column_break_ayxk7",
+  "paid_by_clearing_agent",
+  "invoice_paid",
+  "document_section_section",
+  "attach_documents",
+  "section_break_muabn",
+  "document",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "clearing_file",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Clearing File",
+   "options": "Clearing File"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Port Clearance",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_dfl0o",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "document_section_section",
+   "fieldtype": "Section Break",
+   "label": "Document Section"
+  },
+  {
+   "fieldname": "document",
+   "fieldtype": "Table",
+   "label": "Document",
+   "options": "Port clearance Document",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "clearing_file.customer",
+   "fieldname": "consignee",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Consignee",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "clearing_file.address_display",
+   "fieldname": "consignee_address",
+   "fieldtype": "Small Text",
+   "label": "Consignee Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "staff_id",
+   "fieldtype": "Link",
+   "label": "Staff ID",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "staff_id.employee_name",
+   "fieldname": "staff_name",
+   "fieldtype": "Data",
+   "label": "Staff Name",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "paid_by_clearing_agent",
+   "fieldtype": "Check",
+   "label": "Paid By Clearing Agent"
+  },
+  {
+   "bold": 1,
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Payment Pending\nPayment Completed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "attach_documents",
+   "fieldtype": "Button",
+   "label": "Attach Documents"
+  },
+  {
+   "fieldname": "section_break_muabn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "staff_section",
+   "fieldtype": "Section Break",
+   "label": "Staff"
+  },
+  {
+   "fieldname": "column_break_kj4eh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_charges_section",
+   "fieldtype": "Section Break",
+   "label": "Total Charges"
+  },
+  {
+   "fieldname": "total_charges",
+   "fieldtype": "Currency",
+   "label": "Total Charges"
+  },
+  {
+   "fieldname": "column_break_ayxk7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "container_deposit_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Container Deposit Amount"
+  },
+  {
+   "default": "0",
+   "fieldname": "invoice_paid",
+   "fieldtype": "Check",
+   "label": "Charges Paid"
+  },
+  {
+   "fieldname": "cf_delivery_note",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Delivery Note",
+   "options": "CF Delivery Note",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-09-24 15:49:42.908779",
+ "modified_by": "Administrator",
+ "module": "Clearing",
+ "name": "Port Clearance",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

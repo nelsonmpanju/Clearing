@@ -1,0 +1,165 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CC-{clearing_file}-{#####}",
+ "creation": "2024-07-15 23:20:46.142648",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "consigee_details_section",
+  "clearing_file",
+  "column_break_ahtow",
+  "status",
+  "consigee",
+  "service_charge_details_section",
+  "charges",
+  "section_break_0qrth",
+  "column_break_wv5mn",
+  "column_break_fp5jw",
+  "tra_clearance_total",
+  "port_clearance_total",
+  "shipment_clearance_total",
+  "physical_clearance_total",
+  "total_charges_sum",
+  "column_break_1",
+  "invoice_number",
+  "column_break_hqjie",
+  "generate_invoice"
+ ],
+ "fields": [
+  {
+   "fieldname": "service_charge_details_section",
+   "fieldtype": "Section Break",
+   "label": "Charge Details"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Section Break",
+   "label": "Payment Details"
+  },
+  {
+   "fieldname": "invoice_number",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Invoice",
+   "options": "Sales Invoice",
+   "read_only": 1
+  },
+  {
+   "fieldname": "consigee_details_section",
+   "fieldtype": "Section Break",
+   "label": "Consigee Details"
+  },
+  {
+   "fieldname": "clearing_file",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Clearing File",
+   "options": "Clearing File",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ahtow",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "clearing_file.customer",
+   "fieldname": "consigee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Consigee",
+   "options": "Customer",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "charges",
+   "fieldtype": "Table",
+   "label": "Charges",
+   "options": "Clearing Charge Detail",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Payment Status",
+   "options": "Unpaid\nPartially Paid\nPaid",
+   "reqd": 1
+  },
+  {
+   "fieldname": "generate_invoice",
+   "fieldtype": "Button",
+   "label": "Generate Invoice"
+  },
+  {
+   "fieldname": "column_break_hqjie",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tra_clearance_total",
+   "fieldtype": "Currency",
+   "label": "TRA Clearance Total"
+  },
+  {
+   "fieldname": "port_clearance_total",
+   "fieldtype": "Currency",
+   "label": "Port Clearance Total"
+  },
+  {
+   "fieldname": "shipment_clearance_total",
+   "fieldtype": "Currency",
+   "label": "Shipment Clearance Total"
+  },
+  {
+   "fieldname": "physical_clearance_total",
+   "fieldtype": "Currency",
+   "label": "Physical Verification Total"
+  },
+  {
+   "fieldname": "section_break_0qrth",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_wv5mn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_fp5jw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_charges_sum",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Total Charges"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-09-02 15:03:55.057766",
+ "modified_by": "Administrator",
+ "module": "Clearing",
+ "name": "Clearing Charges",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

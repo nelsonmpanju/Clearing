@@ -1,0 +1,49 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-09-17 09:59:57.703766",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "truck_number",
+  "driver_name",
+  "driver_license_number"
+ ],
+ "fields": [
+  {
+   "fieldname": "truck_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Truck Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Driver Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "driver_license_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Driver\u2019s License Number",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-09-17 10:03:11.065594",
+ "modified_by": "Administrator",
+ "module": "Clearing",
+ "name": "Transporter Truck Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

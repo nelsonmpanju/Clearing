@@ -1,0 +1,64 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-08-16 09:58:16.831172",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "hs_code",
+  "risk_level",
+  "assessed_by",
+  "reason_for_risk_attribute"
+ ],
+ "fields": [
+  {
+   "fieldname": "hs_code",
+   "fieldtype": "Data",
+   "label": "H.S. Code"
+  },
+  {
+   "fieldname": "risk_level",
+   "fieldtype": "Select",
+   "label": "Risk Level ",
+   "options": "\nLow\nMedium\nHigh"
+  },
+  {
+   "fieldname": "reason_for_risk_attribute",
+   "fieldtype": "Table",
+   "label": "Reason for Risk Attribute",
+   "options": "Reason for Risk Attribute"
+  },
+  {
+   "description": "(who conducted the assessment)",
+   "fieldname": "assessed_by",
+   "fieldtype": "Data",
+   "label": "Assessed By"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-08-16 12:18:21.526184",
+ "modified_by": "Administrator",
+ "module": "Clearing",
+ "name": "Risk Assessment",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

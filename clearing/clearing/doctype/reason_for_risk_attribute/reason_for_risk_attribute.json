@@ -1,0 +1,51 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-08-16 09:55:50.499179",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "reason_for_risk_attribute",
+  "reason_for_risk_value",
+  "assessment_date",
+  "required_actions"
+ ],
+ "fields": [
+  {
+   "fieldname": "reason_for_risk_attribute",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Reason for Risk Attribute",
+   "options": "Risk"
+  },
+  {
+   "fieldname": "reason_for_risk_value",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Reason for Risk Value"
+  },
+  {
+   "fieldname": "assessment_date",
+   "fieldtype": "Date",
+   "label": "Assessment Date "
+  },
+  {
+   "fieldname": "required_actions",
+   "fieldtype": "Data",
+   "label": "Required Actions"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-08-16 12:34:39.003423",
+ "modified_by": "Administrator",
+ "module": "Clearing",
+ "name": "Reason for Risk Attribute",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

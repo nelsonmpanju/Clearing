@@ -1,0 +1,165 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CF-DN-{YYYY}-{#####}",
+ "creation": "2024-09-19 15:27:32.198359",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "clearing_file",
+  "consignee",
+  "container_deposit_amount",
+  "column_break_hrtyp",
+  "posting_date",
+  "delivery_date",
+  "address",
+  "delivery_location",
+  "truck_announcement_section",
+  "exporter_type",
+  "column_break_hkier",
+  "sub_contract_company",
+  "section_break_rjgdp",
+  "truck",
+  "has_container_interchange",
+  "return_date",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "clearing_file",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Clearing File",
+   "options": "Clearing File",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_hrtyp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "truck_announcement_section",
+   "fieldtype": "Section Break",
+   "label": "Truck Announcement "
+  },
+  {
+   "fieldname": "exporter_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Exporter Type",
+   "options": "In-house\nSub-contract"
+  },
+  {
+   "fieldname": "column_break_hkier",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.exporter_type == 'Sub-contract'",
+   "fieldname": "sub_contract_company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sub-Contract Company",
+   "mandatory_depends_on": "eval:doc.exporter_type =='Sub-contract'",
+   "options": "Transporter"
+  },
+  {
+   "fieldname": "section_break_rjgdp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "truck",
+   "fieldtype": "Table",
+   "options": "Truck Detail"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "CF Delivery Note",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "delivery_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Delivery Date"
+  },
+  {
+   "fetch_from": "clearing_file.customer",
+   "fieldname": "consignee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Consignee",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "clearing_file.address_display",
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "delivery_location",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Delivery Location"
+  },
+  {
+   "fieldname": "container_deposit_amount",
+   "fieldtype": "Currency",
+   "label": "Container Deposit Amount"
+  },
+  {
+   "default": "0",
+   "fieldname": "has_container_interchange",
+   "fieldtype": "Check",
+   "label": "Has Container Interchange"
+  },
+  {
+   "depends_on": "eval:doc.has_container_interchange == 1",
+   "fieldname": "return_date",
+   "fieldtype": "Date",
+   "label": "Return Date ",
+   "mandatory_depends_on": "eval:doc.has_container_interchange == 1"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-09-27 12:04:39.743929",
+ "modified_by": "Administrator",
+ "module": "Clearing",
+ "name": "CF Delivery Note",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

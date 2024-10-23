@@ -1,0 +1,173 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:SC-{YYYY}-{####}",
+ "creation": "2024-07-22 16:45:32.899636",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "clearing_file",
+  "consignee",
+  "delivery_order_expire_date",
+  "column_break_a2owv",
+  "posting_date",
+  "status",
+  "staff_id",
+  "staff_name",
+  "total_charges_section",
+  "total_charges",
+  "column_break_r0s5o",
+  "paid_by_clearing_agent",
+  "invoice_paid",
+  "section_break_keyml",
+  "attach_documents",
+  "section_break_uevyo",
+  "document",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "clearing_file",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Clearing File",
+   "options": "Clearing File",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Shipment Clearance",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Payment Pending\nPayment Completed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_keyml",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_a2owv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fetch_from": "clearing_file.customer",
+   "fieldname": "consignee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "consignee",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "document",
+   "fieldtype": "Table",
+   "label": "Document",
+   "options": "Ship clearance Document",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "paid_by_clearing_agent",
+   "fieldtype": "Check",
+   "label": "Paid By Clearing Agent"
+  },
+  {
+   "fieldname": "attach_documents",
+   "fieldtype": "Button",
+   "label": "Attach Documents"
+  },
+  {
+   "fieldname": "section_break_uevyo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "staff_id",
+   "fieldtype": "Link",
+   "label": "Staff ID",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "staff_id.employee_name",
+   "fieldname": "staff_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Staff Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "delivery_order_expire_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Delivery Order Expire Date"
+  },
+  {
+   "fieldname": "total_charges",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Charges"
+  },
+  {
+   "fieldname": "total_charges_section",
+   "fieldtype": "Section Break",
+   "label": "Total Charges"
+  },
+  {
+   "fieldname": "column_break_r0s5o",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "invoice_paid",
+   "fieldtype": "Check",
+   "label": "Charges Paid"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-09-27 10:22:44.091854",
+ "modified_by": "Administrator",
+ "module": "Clearing",
+ "name": "Shipment Clearance",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

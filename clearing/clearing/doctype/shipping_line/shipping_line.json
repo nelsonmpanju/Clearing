@@ -1,0 +1,75 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format: {shipping_line}",
+ "creation": "2024-07-04 15:05:37.744889",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "shipping_line",
+  "shipping_line_code",
+  "column_break_mrd2c",
+  "contact_number",
+  "email_address",
+  "address"
+ ],
+ "fields": [
+  {
+   "fieldname": "shipping_line",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name"
+  },
+  {
+   "fieldname": "column_break_mrd2c",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shipping_line_code",
+   "fieldtype": "Data",
+   "label": "Shipping Line Code"
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number"
+  },
+  {
+   "fieldname": "email_address",
+   "fieldtype": "Data",
+   "label": "Email Address"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Text",
+   "label": "Address"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-08-23 15:26:10.752040",
+ "modified_by": "Administrator",
+ "module": "Clearing",
+ "name": "Shipping Line",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

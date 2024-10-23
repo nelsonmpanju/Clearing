@@ -1,0 +1,68 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-08-15 10:35:51.521822",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "document_name",
+  "document_received",
+  "column_break_lsfgf",
+  "view_document",
+  "document_attributes",
+  "clearing_document_id"
+ ],
+ "fields": [
+  {
+   "fieldname": "document_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Document Name",
+   "options": "Clearing Document Type"
+  },
+  {
+   "default": "0",
+   "fieldname": "document_received",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Document Received"
+  },
+  {
+   "fieldname": "column_break_lsfgf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "document_attributes",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Document Attributes",
+   "read_only": 1
+  },
+  {
+   "fieldname": "view_document",
+   "fieldtype": "Attach",
+   "label": "View Document"
+  },
+  {
+   "fieldname": "clearing_document_id",
+   "fieldtype": "Link",
+   "label": "Clearing Document ID",
+   "options": "Clearing Document",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-09-03 16:19:01.788862",
+ "modified_by": "Administrator",
+ "module": "Clearing",
+ "name": "Port clearance Document",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,251 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:PV-{YYYY}-{####}",
+ "creation": "2024-06-03 23:08:39.906886",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "clearing_file",
+  "column_break_uyof8",
+  "posting_date",
+  "verification_status",
+  "status",
+  "verification_section",
+  "consignee",
+  "consignee_address",
+  "address_display",
+  "release_order_date",
+  "column_break_ccdqe",
+  "inspection_date",
+  "verification_location",
+  "total_charges_section",
+  "total_charges",
+  "column_break_ktifs",
+  "invoice_paid",
+  "paid_by_clearing_agent",
+  "field_department_section",
+  "staff_id",
+  "column_break_cma1x",
+  "staff_name",
+  "document_section_section",
+  "attach_documents",
+  "document",
+  "additional_notes_section",
+  "notes",
+  "column_break_c45ta",
+  "site_images",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "verification_section",
+   "fieldtype": "Section Break",
+   "label": "Verification Details"
+  },
+  {
+   "fieldname": "inspection_date",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Inspection Date"
+  },
+  {
+   "fieldname": "verification_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Verification Status",
+   "options": "Pending\nCompleted",
+   "read_only": 1
+  },
+  {
+   "fieldname": "additional_notes_section",
+   "fieldtype": "Section Break",
+   "label": "Additional Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "column_break_ccdqe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_uyof8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Physical Verification",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "clearing_file.customer",
+   "fieldname": "consignee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Consignee",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "clearing_file.customer_address",
+   "fieldname": "consignee_address",
+   "fieldtype": "Link",
+   "label": "Consignee Address",
+   "options": "Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "field_department_section",
+   "fieldtype": "Section Break",
+   "label": "Field Department"
+  },
+  {
+   "fieldname": "staff_id",
+   "fieldtype": "Link",
+   "label": "Staff ID",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "column_break_cma1x",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "staff_id.employee_name",
+   "fieldname": "staff_name",
+   "fieldtype": "Data",
+   "label": "Staff Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "verification_location",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Verification Location"
+  },
+  {
+   "fieldname": "column_break_c45ta",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "site_images",
+   "fieldtype": "Table",
+   "label": "Site Images",
+   "options": "Physical Verification Image"
+  },
+  {
+   "fieldname": "clearing_file",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Clearing File",
+   "no_copy": 1,
+   "options": "Clearing File",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "clearing_file.address_display",
+   "fieldname": "address_display",
+   "fieldtype": "Small Text",
+   "label": "Address & Contact",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_charges_section",
+   "fieldtype": "Section Break",
+   "label": "Total Charges"
+  },
+  {
+   "fieldname": "total_charges",
+   "fieldtype": "Currency",
+   "label": "Total Charges"
+  },
+  {
+   "default": "0",
+   "fieldname": "paid_by_clearing_agent",
+   "fieldtype": "Check",
+   "label": "Paid By Clearing Agent"
+  },
+  {
+   "fieldname": "release_order_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Release Order Date"
+  },
+  {
+   "fieldname": "column_break_ktifs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "invoice_paid",
+   "fieldtype": "Check",
+   "label": "Charges Paid"
+  },
+  {
+   "fieldname": "document_section_section",
+   "fieldtype": "Section Break",
+   "label": "Document Section"
+  },
+  {
+   "fieldname": "attach_documents",
+   "fieldtype": "Button",
+   "label": "Attach Documents"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "bold": 1,
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Payment Pending\nPayment Completed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "document",
+   "fieldtype": "Table",
+   "options": "Physical Verification Document",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-09-24 15:38:41.318542",
+ "modified_by": "Administrator",
+ "module": "Clearing",
+ "name": "Physical Verification",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

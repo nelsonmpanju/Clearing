@@ -1,0 +1,91 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:flight_number",
+ "creation": "2024-07-15 13:42:36.636469",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "name1",
+  "airline",
+  "aircraft_type",
+  "column_break_vd9i9",
+  "flight_number",
+  "capacity",
+  "registration_number",
+  "year_built"
+ ],
+ "fields": [
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "airline",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Airline",
+   "options": "Airline"
+  },
+  {
+   "fieldname": "column_break_vd9i9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "flight_number",
+   "fieldtype": "Data",
+   "label": "Flight Number",
+   "unique": 1
+  },
+  {
+   "fieldname": "aircraft_type",
+   "fieldtype": "Select",
+   "label": "Aircraft Type",
+   "options": "Passenger\nCargo\nPrivate"
+  },
+  {
+   "fieldname": "capacity",
+   "fieldtype": "Data",
+   "label": "Capacity (Seats/Cargo)"
+  },
+  {
+   "fieldname": "registration_number",
+   "fieldtype": "Data",
+   "label": "Registration Number"
+  },
+  {
+   "fieldname": "year_built",
+   "fieldtype": "Int",
+   "label": "Year Built"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-07-23 17:32:54.538604",
+ "modified_by": "Administrator",
+ "module": "Clearing",
+ "name": "Airplane",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

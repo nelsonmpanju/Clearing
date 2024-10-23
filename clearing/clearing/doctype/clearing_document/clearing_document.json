@@ -1,0 +1,130 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{document_type}-{clearing_file}-{####}",
+ "creation": "2024-08-09 15:00:59.378959",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "clearing_file",
+  "consignee",
+  "linked_file",
+  "column_break_rge6c",
+  "posting_date",
+  "company",
+  "section_break_4uwiw",
+  "document_type",
+  "column_break_1q3mq",
+  "document_attachment",
+  "document_attributes_section",
+  "clearing_document_attributes"
+ ],
+ "fields": [
+  {
+   "fieldname": "document_type",
+   "fieldtype": "Link",
+   "label": "Document Type",
+   "options": "Clearing Document Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "document_attachment",
+   "fieldtype": "Attach",
+   "label": "Document Attachment"
+  },
+  {
+   "fieldname": "document_attributes_section",
+   "fieldtype": "Section Break",
+   "label": "Document Attributes"
+  },
+  {
+   "fieldname": "clearing_document_attributes",
+   "fieldtype": "Table",
+   "options": "Clearing Document Attribute"
+  },
+  {
+   "fieldname": "column_break_1q3mq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "clearing_file",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Clearing File",
+   "options": "Clearing File",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_4uwiw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_rge6c",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "linked_file",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Linked Document",
+   "options": "Clearing File\nTRA Clearance\nPhysical Verification\nPort Clearance\nShipment Clearance",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "clearing_file.customer",
+   "fieldname": "consignee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Consignee",
+   "options": "Customer",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-09-19 13:18:29.607232",
+ "modified_by": "Administrator",
+ "module": "Clearing",
+ "name": "Clearing Document",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "document_type"
+}

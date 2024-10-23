@@ -1,0 +1,68 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-09-19 13:09:03.592999",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "clearing_document_id",
+  "document_name",
+  "document_received",
+  "column_break_u17jj",
+  "document_attributes",
+  "view_document"
+ ],
+ "fields": [
+  {
+   "fieldname": "clearing_document_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Clearing Document",
+   "options": "Clearing Document"
+  },
+  {
+   "fieldname": "document_name",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Document Name",
+   "options": "Clearing Document Type"
+  },
+  {
+   "default": "0",
+   "fieldname": "document_received",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Document Received"
+  },
+  {
+   "fieldname": "column_break_u17jj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "document_attributes",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Document Attributes"
+  },
+  {
+   "fieldname": "view_document",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "View Document"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-09-19 13:09:03.592999",
+ "modified_by": "Administrator",
+ "module": "Clearing",
+ "name": "Physical Verification Document",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

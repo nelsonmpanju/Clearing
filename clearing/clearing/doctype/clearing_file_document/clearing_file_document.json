@@ -1,0 +1,76 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-08-14 10:10:55.969807",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "clearing_document_id",
+  "document_name",
+  "document_received",
+  "submission_date",
+  "column_break_m75az",
+  "view_document",
+  "document_attributes"
+ ],
+ "fields": [
+  {
+   "fieldname": "document_name",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Document Name",
+   "options": "Clearing Document Type"
+  },
+  {
+   "default": "0",
+   "fieldname": "document_received",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Document Received"
+  },
+  {
+   "fieldname": "submission_date",
+   "fieldtype": "Datetime",
+   "in_standard_filter": 1,
+   "label": "Submission Date & time"
+  },
+  {
+   "fieldname": "column_break_m75az",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "view_document",
+   "fieldtype": "Attach",
+   "label": "View Document"
+  },
+  {
+   "fieldname": "document_attributes",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Document Atrributes",
+   "read_only": 1
+  },
+  {
+   "fieldname": "clearing_document_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Clearing Document ",
+   "options": "Clearing Document",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-09-13 12:31:06.070970",
+ "modified_by": "Administrator",
+ "module": "Clearing",
+ "name": "Clearing File Document",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

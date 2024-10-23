@@ -1,0 +1,130 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-07-15 22:58:39.021275",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "package_type",
+  "hs_code",
+  "container_number",
+  "column_break_1",
+  "cargo_description",
+  "number_of_packages",
+  "seal_number",
+  "column_break_2",
+  "weight",
+  "volume",
+  "country_of_origin",
+  "column_break_3",
+  "value",
+  "currency",
+  "trading_country",
+  "country_last_consignment"
+ ],
+ "fields": [
+  {
+   "fieldname": "cargo_description",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Cargo Description",
+   "reqd": 1
+  },
+  {
+   "fieldname": "hs_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "HS Code"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Weight (Kg)"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "volume",
+   "fieldtype": "Float",
+   "label": "Volume (CBM)"
+  },
+  {
+   "fieldname": "country_of_origin",
+   "fieldtype": "Link",
+   "label": "Cargo's country of Origin",
+   "options": "Country",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "value",
+   "fieldtype": "Currency",
+   "label": "Value",
+   "reqd": 1
+  },
+  {
+   "fieldname": "package_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Package Type",
+   "options": "Container 20FT\nContainer 40FT\nLoose",
+   "reqd": 1
+  },
+  {
+   "fieldname": "container_number",
+   "fieldtype": "Data",
+   "label": "Container Number"
+  },
+  {
+   "fieldname": "seal_number",
+   "fieldtype": "Data",
+   "label": "Seal Number"
+  },
+  {
+   "fieldname": "number_of_packages",
+   "fieldtype": "Int",
+   "label": "Number of packages"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "trading_country",
+   "fieldtype": "Link",
+   "label": "Trading Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "country_last_consignment",
+   "fieldtype": "Link",
+   "label": "Country Last Consignment",
+   "options": "Country"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-09-02 10:32:03.091905",
+ "modified_by": "Administrator",
+ "module": "Clearing",
+ "name": "Cargo",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,185 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:TRA-{YY}-{####}",
+ "creation": "2024-06-03 23:04:07.717815",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_details_section",
+  "clearing_file",
+  "customer",
+  "mode_of_transport",
+  "column_break_yxf5j",
+  "posting_date",
+  "status",
+  "total_charges_section",
+  "total_charges",
+  "column_break_7tyvu",
+  "paid_by_clearing_agent",
+  "invoice_paid",
+  "document_section_section",
+  "attach_documents",
+  "section_break_lps6b",
+  "document",
+  "notes_section",
+  "notes",
+  "amended_from",
+  "clearing_file_reference"
+ ],
+ "fields": [
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Payment Pending\nPayment Completed"
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "basic_details_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Details"
+  },
+  {
+   "fieldname": "column_break_yxf5j",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "clearing_file_number.customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Consignee",
+   "options": "Customer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "TRA Clearance",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "clearing_file_reference",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Clearing file reference",
+   "options": "Clearing File"
+  },
+  {
+   "fieldname": "document_section_section",
+   "fieldtype": "Section Break",
+   "label": "Document section"
+  },
+  {
+   "fieldname": "document",
+   "fieldtype": "Table",
+   "label": "Document",
+   "options": "TRA Document",
+   "read_only": 1
+  },
+  {
+   "fieldname": "clearing_file",
+   "fieldtype": "Link",
+   "label": "Clearing File ",
+   "options": "Clearing File",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "paid_by_clearing_agent",
+   "fieldtype": "Check",
+   "label": "Paid By Clearing Agent"
+  },
+  {
+   "fieldname": "attach_documents",
+   "fieldtype": "Button",
+   "label": "Attach Documents"
+  },
+  {
+   "fieldname": "section_break_lps6b",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "clearing_file.mode_of_transport",
+   "fieldname": "mode_of_transport",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Mode of Transport"
+  },
+  {
+   "fieldname": "column_break_7tyvu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_charges_section",
+   "fieldtype": "Section Break",
+   "label": "Total Charges"
+  },
+  {
+   "fieldname": "total_charges",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total charges"
+  },
+  {
+   "default": "0",
+   "fieldname": "invoice_paid",
+   "fieldtype": "Check",
+   "label": "Charges Paid"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-09-24 15:48:05.619888",
+ "modified_by": "Administrator",
+ "module": "Clearing",
+ "name": "TRA Clearance",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Orange",
+   "title": " Payment Pending"
+  }
+ ]
+}
